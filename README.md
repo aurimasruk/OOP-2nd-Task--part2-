@@ -57,3 +57,7 @@ Vardas    Pavarde        Galutinis (vid.)
 Vardenis1 Pavardenis1    7.00
 Vardenis2 Pavardenis2    8.07
 ```
+
+# Releases #
+
+[v0.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.1) - pirminė programos versija.
