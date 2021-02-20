@@ -15,20 +15,38 @@ Paleidus programą yra prašoma įvesti duomenis:
 # Programos veikimo pavyzdys #
 
 ```
-Ar norite prideti dar viena studenta? (Y/N): y
-Iveskite studento varda: Vardenis2
-Iveskite studento pavarde: Pavardenis2
+Iveskite studento varda: Vardenis1
+
+Iveskite studento pavarde: Pavardenis1
+
 Ar zinote atliktu namu darbu kieki? (Y/N): y
-Iveskite atliktu namu darbu kieki: 4
+
+Iveskite atliktu namu darbu kieki: 3
+
+Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): n
+
+Iveskite atliktu namu darbu pazymius:
+4 7 6
+
+Iveskite egzamino pazymi: 8
+
+Ar norite prideti dar viena studenta? (Y/N) y
+
+Iveskite studento varda: Vardenis2
+
+Iveskite studento pavarde: Pavardenis2
+
+Ar zinote atliktu namu darbu kieki? (Y/N): a
+Wrong input. Try again.
+n
+
+Sugeneruotas atliktu namu darbu kiekis: 19
+
 Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): y
-Ar norite prideti dar viena studenta? (Y/N): y
-Iveskite studento varda: Vardenis3
-Iveskite studento pavarde: Pavardenis3
-Ar zinote atliktu namu darbu kieki? (Y/N): N
-Sugeneruotas atliktu namu darbu kiekis: 20
-Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): Y
-Ar norite prideti dar viena studenta? (Y/N): n
-Ar norite apskaiciuoti mediana? (Y - med / N - vid): N
+
+Ar norite prideti dar viena studenta? (Y/N) n
+
+Ar norite apskaiciuoti mediana? (Y - med / N - vid): n
 
 
 
@@ -36,7 +54,6 @@ Ar norite apskaiciuoti mediana? (Y - med / N - vid): N
 
 Vardas    Pavarde        Galutinis (vid.)
 ------------------------------------------------
-Vardenis1 Pavardenis1    7.60
-Vardenis2 Pavardenis2    2.33
-Vardenis3 Pavardenis3    8.06
+Vardenis1 Pavardenis1    7.00
+Vardenis2 Pavardenis2    8.07
 ```
