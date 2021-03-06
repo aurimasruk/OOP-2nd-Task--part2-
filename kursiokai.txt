@@ -1,0 +1,10 @@
+Vardas      Pavarde     ND1     ND2     ND3     ND4     ND5     ND6     ND7     ND8     ND9     ND10    ND11    ND12    ND13    ND14    ND15    Egz.
+Juozas      Juozaitis   7       5       6       9       4       8       6       5       9       2       5       7       7       8       10      6
+Birute      Birutyte    9       8       6       9       8       6       5       8       6       9       10      7       8       6       6       8
+Audrius     Audraitis   7       3       3       5       3       1       6       8       6       2       4       8       2       6       8       5
+Toma        Tomaityte   4       7       10      9       10      6       7       10      7       10      8       6       4       9       8       7
+Jonas       Jonaitis    7       8       8       6       6       9       8       1       7       7       6       4       6       5       2       7
+Agne        Agnaityte   10      9       10      8       10      9       6       10      9       6       10      8       8       9       10      10
+Lukas       Lukaitis    9       3       1       6       5       9       5       8       7       8       1       5       7       8       9       3
+Monika      Monikaityte 7       8       6       5       1       9       5       7       3       6       2       7       8       9       4       4
+Pranas      Pranaitis   7       5       6       6       3       3       6       9       8       4       9       8       8       6       7       8
