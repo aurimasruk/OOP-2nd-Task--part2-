@@ -15,8 +15,56 @@ Pasirinkus įvesti duomenis duomenis rankiniu būdu, programa prašo įvesti:
 > Taip pat programa suteikia galimybę sugeneruoti atsitiktinius namų darbų bei egzamino rezultatus.
 > Galutiniai duomenys lentelėje yra automatiškai išrūšiuojami pagal studentų vardus.
 
-# Programos veikimo pavyzdys #
+# Programos veikimo pavyzdžiai #
 
+### Programos veikimas neaptikus tekstinio failo, ir duomenis įvedus rankiniu būdu ###
+
+```
+Failas nerastas. Duomenys privalo buti ivesti rankiniu budu. 
+
+Iveskite studento varda: Matas
+
+Iveskite studento pavarde: Matulionis
+
+Ar zinote atliktu namu darbu kieki? (Y/N): n
+
+Sugeneruotas atliktu namu darbu kiekis: 18
+
+Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): y
+
+Sugeneruoti studento pazymiai: 6 10 4 4 9 4 4 6 8 5 8 4 1 2 1 9 6 9
+Egzamino rezultatas: 1
+Ar norite prideti dar viena studenta? (Y/N) Y
+Iveskite studento varda: Aidas
+
+Iveskite studento pavarde: Aidauskas
+
+Ar zinote atliktu namu darbu kieki? (Y/N): y
+
+Iveskite atliktu namu darbu kieki: 4
+
+Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): n
+
+Iveskite atliktu namu darbu pazymius:
+4 8 6 5
+
+Iveskite egzamino pazymi: 8
+
+Ar norite prideti dar viena studenta? (Y/N) n
+
+Ar norite apskaiciuoti mediana(1), vidurki(2), ar abu(3)? 3
+
+
+
+
+
+Vardas         Pavarde        Galutinis (vid.)  Galutinis (med.)
+----------------------------------------------------------------
+Aidas          Aidauskas      7.10              6.80
+Matas          Matulionis     2.82              2.60
+```
+
+### Programos veikimas įvedant duomenis iš failo ###
 ```
 File 'kursiokai.txt' detected.
 
@@ -57,3 +105,8 @@ Toma           Tomaityte      7.27              7.00
   * Pridėta galimybė nuskaityti duomenis iš failo.
   * Pridėta galimybė spausdinti vidurkį ir medianą kartu.
   * Studentai yra automatiškai išrūšiuojami pagal jų vardus.
+
+* [v0.3](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.3) :
+  * Sukurtas `functions.cpp` failas, kuriame yra sudėtos visos programoje naudojamos funkcijos.
+  * Sukurtas `functions.hpp` header failas, kuriame yra saugoma studentų struct.
+  * Sukurtas išimčių valdymas ([Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)).
