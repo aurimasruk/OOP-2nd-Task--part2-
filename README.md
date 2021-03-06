@@ -94,7 +94,7 @@ Toma           Tomaityte      7.27              7.00
 # Programos įdiegimas ir naudojimasis #
 
 * Atsisiųskite vieną programos versijų iš [Releases](https://github.com/aurimasruk/OOP-2nd-Task/releases) aplanko ir ją išarchyvuokite.
-* Komandinėje eilutėje įveskite `g++ -o main main.cpp functions.cpp`.
+* Komandinėje eilutėje įveskite `g++ -o main main.cpp functions.cpp` ir `./main`.
 * Pradėjus veikti programai, įveskite reikalaujamus duomenis.
  
 # Releases #
