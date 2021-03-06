@@ -94,9 +94,9 @@ Toma           Tomaityte      7.27              7.00
 # Programos įdiegimas ir naudojimasis #
 
 * Atsisiųskite vieną programos versijų iš [Releases](https://github.com/aurimasruk/OOP-2nd-Task/releases) aplanko ir ją išarchyvuokite.
-* Atsisiųskite jums patinkančią __C++__ palaikančią programą (_[Visual Studio](https://visualstudio.microsoft.com/downloads/), [Sublime Text](https://www.sublimetext.com/3), [CodeBlocks](https://www.codeblocks.org/downloads/)_).
-* Atsidarykite pateiktą programos kodą ir jį paleiskite.
-
+* Komandinėje eilutėje įveskite `g++ -o main main.cpp functions.cpp`.
+* Pradėjus veikti programai, įveskite reikalaujamus duomenis.
+ 
 # Releases #
 
 * [v0.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.1) : pirminė programos versija.
