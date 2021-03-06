@@ -51,8 +51,9 @@ Toma           Tomaityte      7.27              7.00
 
 # Releases #
 
-[v0.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.1) - pirminė programos versija.
+* [v0.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.1) : pirminė programos versija.
 
-[v0.2](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.2)  * Pridėta galimybė nuskaityti duomenis iš failo.
+* [v0.2](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.2) :
+  * Pridėta galimybė nuskaityti duomenis iš failo.
   * Pridėta galimybė spausdinti vidurkį ir medianą kartu.
   * Studentai yra automatiškai išrūšiuojami pagal jų vardus.
