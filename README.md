@@ -17,7 +17,7 @@ Pasirinkus įvesti duomenis duomenis rankiniu būdu, programa prašo įvesti:
 
 # Programos veikimo pavyzdžiai #
 
-### Programos veikimas neaptikus tekstinio failo, ir duomenis įvedus rankiniu būdu ###
+### Programos veikimas neaptikus tekstinio failo ir duomenis įvedus rankiniu būdu: ###
 
 ```
 Failas nerastas. Duomenys privalo buti ivesti rankiniu budu. 
@@ -64,7 +64,7 @@ Aidas          Aidauskas      7.10              6.80
 Matas          Matulionis     2.82              2.60
 ```
 
-### Programos veikimas įvedant duomenis iš failo ###
+### Programos veikimas įvedant duomenis iš failo: ###
 ```
 File 'kursiokai.txt' detected.
 
