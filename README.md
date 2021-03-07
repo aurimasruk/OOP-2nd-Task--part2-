@@ -6,7 +6,7 @@ Programa yra skirta apskaičiuoti pažymių vidurkį arba medianą.
 
 Paleidus programą yra prašoma pasirinkti duomenų įvedimo būdą.
 
-Pasirinkus įvesti duomenis duomenis rankiniu būdu, programa prašo įvesti:
+Pasirinkus įvesti duomenis rankiniu būdu, programa prašo įvesti:
 
 * Studento vardą bei pavardę;
 * Namų darbų kiekį;
