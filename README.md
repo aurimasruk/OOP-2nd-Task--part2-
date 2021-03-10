@@ -110,3 +110,6 @@ Toma           Tomaityte      7.27              7.00
   * Sukurtas `functions.cpp` failas, kuriame yra sudėtos visos programoje naudojamos funkcijos.
   * Sukurtas `functions.hpp` header failas, kuriame yra saugoma studentų struct.
   * Sukurtas išimčių valdymas ([Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)).
+
+* [v0.3.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.3.1) :
+  * Sutvarkytas išimčių valdymas ([Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)).
