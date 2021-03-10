@@ -15,15 +15,27 @@ int main(){
 	bool vid;
 	Studentai* studentai = new Studentai[studNum];
 
-	if(FileExist()){
-		cout << "Ar norite skaityti duomenis is failo ar duomenis ivesti rankiniu budu? (y - file / n - manually): ";
-	
-		if(check()){
-			Studentai stud;
-			fileInput(stud, studentai, studNum);
+	try{
+		if(FileExist()){
+			cout << "Ar norite skaityti duomenis is failo ar duomenis ivesti rankiniu budu? (y - file / n - manually): ";
+		
+			if(check()){
+				Studentai stud;
+				fileInput(stud, studentai, studNum);
+			}
+				
+			else{
+				do{
+					Studentai stud;
+					NewStud(stud);
+					processStud(stud, studentai, studNum);
+					cout << endl << "Ar norite prideti dar viena studenta? (Y/N) ";
+				} while(check());
+			}
 		}
-			
-		else{
+
+		else {			// only manual input
+			throw 1;
 			do{
 				Studentai stud;
 				NewStud(stud);
@@ -33,14 +45,14 @@ int main(){
 		}
 	}
 
-	else {			// only manual input
-		cout << "Failas nerastas. Duomenys privalo buti ivesti rankiniu budu. " << endl << endl; 
-		do{
-			Studentai stud;
-			NewStud(stud);
-			processStud(stud, studentai, studNum);
-			cout << endl << "Ar norite prideti dar viena studenta? (Y/N) ";
-		} while(check());
+	catch (int e)
+	{
+		switch (e){
+		case 1:
+			cout << "Failas nerastas. Duomenys privalo buti ivesti rankiniu budu." << endl << endl;
+			break;
+		}
+		exit(1);
 	}
 
 	sort(studentai, studentai + studNum, studComp);
