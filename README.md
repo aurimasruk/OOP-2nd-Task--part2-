@@ -157,6 +157,6 @@ Toma           Tomaityte      7.27              7.00
 
 * [v0.4](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.4) :
   * Sukurta funkcija leidžianti atlikti programos veikimo greičio (spartos) analizę.
-  * Sukurta funkcija leidžianti sugeneruoti atsitiktinius studentų sarašų failus (1000, 10000, 100000, 1000000, 10000000 įrašų).
+  * Sukurta funkcija leidžianti sugeneruoti atsitiktinius studentų sarašų failus (1'000, 10'000, 100'000, 1'000'000, 10'000'000 įrašų).
   * Sukurtas studentų rūšiavimas į dvi grupes pagal pagal galutinį balą.
   * Sugrupuoti studentai yra atitinkamai išvedami į du skirtingus failus.
