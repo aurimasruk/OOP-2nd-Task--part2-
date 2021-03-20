@@ -17,6 +17,48 @@ Pasirinkus įvesti duomenis rankiniu būdu, programa prašo įvesti:
 
 # Programos veikimo pavyzdžiai #
 
+### Programos veikimo greičio (spartos) analizė: ###
+
+```
+Ar norite atlikti programos veikimo (greicio) analize? (Y/N): y
+
+Ar norite apskaiciuoti mediana(1), vidurki(2)? 2
+
+Failas kursiokai1000.txt
+Failo kurimas uztruko: 11ms.
+Duomenu nuskaitymas is failo uztruko: 6ms.    
+Studentu rusiavimas i dvi grupes uztruko: 1ms.
+Surusiuotu studentu isvedimas i du naujus failus uztruko: 15ms.
+
+
+Failas kursiokai10000.txt
+Failo kurimas uztruko: 46ms.
+Duomenu nuskaitymas is failo uztruko: 44ms.
+Studentu rusiavimas i dvi grupes uztruko: 4ms.
+Surusiuotu studentu isvedimas i du naujus failus uztruko: 60ms.
+
+
+Failas kursiokai100000.txt
+Failo kurimas uztruko: 394ms.
+Duomenu nuskaitymas is failo uztruko: 438ms.
+Studentu rusiavimas i dvi grupes uztruko: 48ms.
+Surusiuotu studentu isvedimas i du naujus failus uztruko: 461ms.
+
+
+Failas kursiokai1000000.txt
+Failo kurimas uztruko: 4245ms.
+Duomenu nuskaitymas is failo uztruko: 4717ms.
+Studentu rusiavimas i dvi grupes uztruko: 545ms.
+Surusiuotu studentu isvedimas i du naujus failus uztruko: 4443ms.
+
+
+Failas kursiokai10000000.txt
+Failo kurimas uztruko: 41256ms.
+Duomenu nuskaitymas is failo uztruko: 47466ms.
+Studentu rusiavimas i dvi grupes uztruko: 4961ms.
+Surusiuotu studentu isvedimas i du naujus failus uztruko: 44019ms.
+```
+
 ### Programos veikimas neaptikus tekstinio failo ir duomenis įvedus rankiniu būdu: ###
 
 ```
@@ -109,7 +151,12 @@ Toma           Tomaityte      7.27              7.00
 * [v0.3](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.3) :
   * Sukurtas `functions.cpp` failas, kuriame yra sudėtos visos programoje naudojamos funkcijos.
   * Sukurtas `functions.hpp` header failas, kuriame yra saugoma studentų struct.
-  * Sukurtas išimčių valdymas ([Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)).
 
 * [v0.3.1](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.3.1) :
   * Sutvarkytas išimčių valdymas ([Exception Handling](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)).
+
+* [v0.4](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.4) :
+  * Sukurta funkcija leidžianti atlikti programos veikimo greičio (spartos) analizę.
+  * Sukurta funkcija leidžianti sugeneruoti atsitiktinius studentų sarašų failus (1000, 10000, 100000, 1000000, 10000000 įrašų).
+  * Sukurtas studentų rūšiavimas į dvi grupes pagal pagal galutinį balą.
+  * Sugrupuoti studentai yra atitinkamai išvedami į du skirtingus failus.
