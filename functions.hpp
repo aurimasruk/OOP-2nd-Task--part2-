@@ -3,12 +3,15 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include <deque>
+#include <list>
 #include <algorithm>
 #include <time.h>
 #include <stdlib.h>
 #include <fstream>
 #include <cmath>
 #include <chrono>
+#include <numeric>
 
 using namespace std;
 using namespace std::chrono;
@@ -24,16 +27,38 @@ struct Studentai{
 
 bool check();
 char choiceCheck(char&);
+char choiceCheck2(char&);
 int numInput();
 void checkGrade(int&);
+
 void NewStud(vector <Studentai>&);
-void fileInput(vector <Studentai>&, string);
+
+template <class T>
+void fileInput(T&, string, char, bool);
+
 void output(vector <Studentai>, char);
-void fileOutput(vector <Studentai>, vector<Studentai>, char, string);
+
+template <class T>
+void fileOutput(T, T, char, string);
+
 bool FileExist();
 bool studComp(Studentai, Studentai);
 void generateStud(int, string);
-void calcFinal(vector <Studentai>&, char);
-void group(vector <Studentai>, vector <Studentai>&, vector <Studentai>&);
+
+double calcFinal(vector <int>, int, int, char);			// update this in normal function of program
+
+template <class T>
+void group(T, T&, int);
+
+template <class T>
+void group(T, T&, T&, int);
+
+template <class T>
+void groupVector(T, T&, T&);
+
+template <class T>
+void mainFunc(T, T, T, bool, char);
+
+void benchmark();
 
 #endif
