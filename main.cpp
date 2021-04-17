@@ -44,5 +44,6 @@ int main(){
 		output(studentai, rt);
 	}
 
+	cout << endl;
 	system("PAUSE");
 }

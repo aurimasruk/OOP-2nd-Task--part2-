@@ -41,6 +41,9 @@ void output(vector <Studentai>, char);
 template <class T>
 void fileOutput(T, T, char, string);
 
+template <class T>
+void print(T, char, string);
+
 bool FileExist();
 bool studComp(Studentai, Studentai);
 void generateStud(int, string);
@@ -48,16 +51,23 @@ void generateStud(int, string);
 double calcFinal(vector <int>, int, int, char);			// update this in normal function of program
 
 template <class T>
-void group(T, T&, int);
+void group_strat1(T, T&, T&, int);
 
 template <class T>
-void group(T, T&, T&, int);
+void group_strat2(T&, T&, int);
 
 template <class T>
-void groupVector(T, T&, T&);
+void group_optimised_vector(T&, T&, int);
 
 template <class T>
-void mainFunc(T, T, T, bool, char);
+void mainFunc(T, T, T, bool, char, char);
+
+template <class T>
+void mainFuncForList(T, T, T, bool, char, char);
+
+void benchmarkingVector(bool, char, char);
+void benchmarkingDeque(bool, char, char);
+void benchmarkingList(bool, char, char);
 
 void benchmark();
 
