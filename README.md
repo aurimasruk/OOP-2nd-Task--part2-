@@ -37,11 +37,33 @@ List      | 0.012s. | 0.064s. | 0.649s. | 5.304s. | 52.835s. |
 
 ### Duomenų grupavimas ###
 
+#### 1 strategija ####
+
+Bendro studentai konteinerio (`vector`, `list` ir `deque` tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius: `"Winner"` ir `"Loser"`. 
+
 Container |   1000  |  10000  |  100000 | 1000000 | 10000000 |
 ----------|---------|---------|---------|---------|----------|
-Vector    |    0s.  | 0.004s. | 0.047s. | 0.507s. |  5.449s. |
-Deque     | 0.001s. | 0.002s. | 0.036s. | 0.445s. |  4.765s. |
-List      |    0s.  | 0.004s. | 0.046s. |  0.5s.  |  4.823s. |
+Vector    |    0s.  | 0.003s. | 0.038s. | 0.436s. |  4.035s. |
+Deque     |    0s.  | 0.003s. | 0.034s. |  0.37s. |  5.015s. |
+List      |    0s.  | 0.004s. | 0.043s. | 0.522s. |  6.977s. |
+
+#### 2 strategija ####
+
+Bendro studentų konteinerio (`vector`, `list` ir `deque`) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: `"Loser"`. 
+
+Container |   1000  |  10000  |  100000 | 1000000 | 10000000 |
+----------|---------|---------|---------|---------|----------|
+Vector    |    0s.  | 0.004s. | 0.032s. | 0.354s. |  3.557s. |
+Deque     |    0s.  | 0.004s. | 0.041s. | 0.426s. |  4.376s. |
+List      |    0s.  | 0.005s. |  0.05s. | 0.524s. |  5.351s. |
+
+#### Optimizuotas vektorius (naudojant 2 strategiją) ####
+
+Optimizuotas vektorius yra aprašytas kaip `3` pasirinkimas tarp pasirenkamų strategijų.
+
+Container |   1000  |  10000  |  100000 | 1000000 | 10000000 |
+----------|---------|---------|---------|---------|----------|
+Vector    |    0s.  | 0.002s. | 0.026s. |  0.28s. |  3.027s. |
 
 
 # Programos įdiegimas ir naudojimasis #
@@ -74,3 +96,7 @@ List      |    0s.  | 0.004s. | 0.046s. |  0.5s.  |  4.823s. |
 
 * [v0.5](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v0.5) :
   * Sukurta konteinerių testavimo funkcija, kuri leidžia išmatuoti programos veikimo spartą priklausomai nuo naudojamo vieno iš trijų konteinerių.
+
+* [v1.0](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v1.0) :
+  * Sukurta testavimo funkcija, leidžianti pasirinkti testavimo strategijos būdą.
+  * Sukurta funkcija, leidžianti palyginti testavimo rezultatus tarp paprasto ir optimizuoto vektoriaus.
