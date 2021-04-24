@@ -12,8 +12,6 @@ int main(){
 	else{						// iprasta programos eiga \/
 	
 		vector <Studentai> studentai;
-		vector <Studentai> winner;
-		vector <Studentai> loser;
 
 		if(FileExist()){
 			cout << "Ar norite skaityti duomenis is failo ar duomenis ivesti rankiniu budu? (y - file / n - manually): ";
