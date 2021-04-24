@@ -65,6 +65,18 @@ Container |   1000  |  10000  |  100000 | 1000000 | 10000000 |
 ----------|---------|---------|---------|---------|----------|
 Vector    |    0s.  | 0.002s. | 0.026s. |  0.28s. |  3.027s. |
 
+#### Struct ir Class palyginimas ####
+
+Lentelėje pavaizduoti bendri programos veikimo laikai.
+
+Container |   1000  |  10000  |  100000 |  1000000  |
+----------|---------|---------|---------|-----------|
+struct    | 0.021s. | 0.198s. | 2.388s. | 30.785s.  |
+class     | 0.098s. | 1.451s. | 18.056s.| 331.039s. |
+class -O1 | 0.075s. | 1.072s. | 13.544s.| 265.945s. |
+class -O2 | 0.012s. | 0.113s. | 1.285s. | 17.605s.  |
+class -O3 | 0.013s. | 0.117s. | 1.275s. | 17.482s.  |
+
 
 # Programos įdiegimas ir naudojimasis #
 
@@ -100,3 +112,8 @@ Vector    |    0s.  | 0.002s. | 0.026s. |  0.28s. |  3.027s. |
 * [v1.0](https://github.com/aurimasruk/OOP-2nd-Task/releases/tag/v1.0) :
   * Sukurta testavimo funkcija, leidžianti pasirinkti testavimo strategijos būdą.
   * Sukurta funkcija, leidžianti palyginti testavimo rezultatus tarp paprasto ir optimizuoto vektoriaus.
+
+* [v1.1](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v1.1) :
+  * `Studentai` struktūra pakeista į klasę.
+  * Atliktas spartos palyginimas tarp `struct` ir `class`.
+  * Atlikta eksperimentinė analizė tarp skirtingų optimizavimo lygių, nurodomų flag'ais (`-O1`, `-O2`, `-O3`).
