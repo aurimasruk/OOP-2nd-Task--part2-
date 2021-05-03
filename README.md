@@ -117,3 +117,6 @@ class -O3 | 0.013s. | 0.117s. | 1.275s. | 17.482s.  |
   * `Studentai` struktūra pakeista į klasę.
   * Atliktas spartos palyginimas tarp `struct` ir `class`.
   * Atlikta eksperimentinė analizė tarp skirtingų optimizavimo lygių, nurodomų flag'ais (`-O1`, `-O2`, `-O3`).
+
+* [v1.2](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v1.2) :
+  * Realizuota `Rule of Three`.
