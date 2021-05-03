@@ -1,5 +1,5 @@
 #include "functions.hpp"
-using namespace std;							// FIX SECONDS, FILE GENERATION, WHOLE FILE PROCESS TIME CALCULATION
+using namespace std;							
 
 int main(){
 	srand(time(NULL));
@@ -10,19 +10,17 @@ int main(){
 	if(check())	benchmark();
 
 	else{						// iprasta programos eiga \/
-	
 		vector <Studentai> studentai;
+
+		cout << endl << "Ar norite apskaiciuoti mediana(1), vidurki(2)? ";
+		choiceCheck(rt);
 
 		if(FileExist()){
 			cout << "Ar norite skaityti duomenis is failo ar duomenis ivesti rankiniu budu? (y - file / n - manually): ";
-
-			if(check()){
-				fileInput(studentai, "kursiokai.txt", rt, false);
-			}
-
+			if(check()) fileInput(studentai, "kursiokai.txt", rt, false);
 			else{
 				do{
-					NewStud(studentai);
+					NewStud(studentai, rt);
 					cout << endl << "Ar norite prideti dar viena studenta? (Y/N) ";
 				} while(check());
 			}
@@ -31,15 +29,13 @@ int main(){
 		else {			// only manual input
 			cout << "Failas nerastas. Duomenys privalo buti ivesti rankiniu budu." << endl << endl;
 			do{
-				NewStud(studentai);
+				NewStud(studentai, rt);
 				cout << endl << "Ar norite prideti dar viena studenta? (Y/N) ";
 			} while(check());
 		}
 
 		sort(studentai.begin(), studentai.end(), studComp);
-		cout << endl << "Ar norite apskaiciuoti mediana(1), vidurki(2), ar abu(3)? ";
-		choiceCheck(rt);
-		output(studentai, rt);
+		printCon(studentai, rt);
 	}
 
 	cout << endl;

@@ -45,13 +45,33 @@ public:
 	inline int getFinal() const { return final; }
 
 	// -------------------- Setteriai -----------------------
-	inline void setVardas(std::string vardas) { Studentai::vardas = vardas; }
-	inline void setPavarde(std::string pavarde) { Studentai::pavarde = pavarde; }
+	inline void setVardas(std::string _vardas) { Studentai::vardas = _vardas; }
+	inline void setPavarde(std::string _pavarde) { Studentai::pavarde = _pavarde; }
 	// inline void set1grade(int g) { grades.push_back(g); }
-	inline void setGrades(std::vector<int> nd) { Studentai::grades = nd; }
-	inline void setExam(int exam) { Studentai::exam = exam; }
-	inline void setHomeworkNum(int homeworkNum) { Studentai::homeworkNum = homeworkNum; }
-	inline void setFinal(double final) { Studentai::final = final; }
+	inline void setGrades(std::vector<int> _nd) { Studentai::grades = _nd; }
+	inline void setExam(int _exam) { Studentai::exam = _exam; }
+	inline void setHomeworkNum(int _homeworkNum) { Studentai::homeworkNum = _homeworkNum; }
+	inline void setFinal(double _final) { Studentai::final = _final; }
+
+
+
+	Studentai(const Studentai& other) :			// copy constructor
+		vardas(other.vardas), pavarde(other.pavarde),
+		grades(other.grades), exam(other.exam),
+		homeworkNum(other.homeworkNum), final(other.final) {}
+
+
+	Studentai& operator = (const Studentai& other){			// copy assignment operator
+		vardas = other.vardas;
+		pavarde = other.pavarde;
+		grades = other.grades;
+		exam = other.exam;
+		homeworkNum = other.homeworkNum;
+		final = other.final;
+		return *this;
+	}
+
+	~Studentai() {};			// destructor
 };
 
 bool check();
@@ -61,15 +81,12 @@ int numInput();
 int gradeInput();
 void checkGrade(int&);
 
-void NewStud(vector <Studentai>&);
+void NewStud(vector <Studentai>&, char);
 
 template <class T>
 void fileInput(T&, string, char, bool);
 
-void output(vector <Studentai>, char);
-
-template <class T>
-void fileOutput(T, T, char, string);
+void printCon(vector <Studentai>, char);
 
 template <class T>
 void print(T, char, string);

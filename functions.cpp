@@ -72,9 +72,9 @@ void checkGrade(int &grade){			// grade checkup
 	}
 }
 
-void NewStud(vector <Studentai> &studentai){			// manual input - adding new student				//WORKING
+void NewStud(vector <Studentai> &studentai, char rt){			// manual input - adding new student				//WORKING
 	bool knownGradesNum, generateGrades;
-	int gradeNum;
+	int gradeNum, g, f;
 	string vardas, pavarde;
 	Studentai stud;
 	vector<int> nd;
@@ -90,24 +90,20 @@ void NewStud(vector <Studentai> &studentai){			// manual input - adding new stud
 	if(knownGradesNum){
 		cout << endl << "Iveskite atliktu namu darbu kieki: ";
 		stud.setHomeworkNum(numInput());
-		// stud.setGrades.resize(stud.getHomeworkNum());
 
 		cout << endl << "Ar norite, kad studento pazymiai butu sugeneruojami automatiskai? (Y/N): ";
 		generateGrades = check();
 
-		
-
 		if(generateGrades){							// random number generation
 			gradeNum = stud.getHomeworkNum();
-			// stud.grades.resize(gradeNum);
-			
+
 			cout << endl << "Sugeneruoti studento pazymiai: ";
-			for(int i = 0; i < stud.getHomeworkNum(); i++){
-				nd[i] = rand() % 10 + 1;
-				cout << nd[i] << " ";
+			for(int i = 0; i < gradeNum; i++){
+				g = rand() % 10 + 1;
+				cout << g << " ";
+				nd.push_back(g);
 			}
 			stud.setGrades(nd);
-
 			stud.setExam(rand() % 10 + 1);
 			cout << endl << "Egzamino rezultatas: " << stud.getExam();
 		}
@@ -115,18 +111,17 @@ void NewStud(vector <Studentai> &studentai){			// manual input - adding new stud
 		else {
 			cout << endl << "Iveskite atliktu namu darbu pazymius: " << endl;
 			for(int i = 0; i < stud.getHomeworkNum(); i++){
-				nd[i] = numInput();
-				checkGrade(nd[i]);
+				g = numInput();
+				checkGrade(g);
+				nd.push_back(g);
 			}
 			stud.setGrades(nd);
-
 			cout << endl << "Iveskite egzamino pazymi: ";
 			stud.setExam(gradeInput());
 		}
 	}
 
 	else{
-
 		stud.setHomeworkNum(rand() % 25 + 1);				// homework number range: 1-25
 
 		cout << endl << "Sugeneruotas atliktu namu darbu kiekis: " << stud.getHomeworkNum() << endl;
@@ -136,25 +131,24 @@ void NewStud(vector <Studentai> &studentai){			// manual input - adding new stud
 
 		if(generateGrades){								// random number
 			gradeNum = stud.getHomeworkNum();
-			// stud.grades.resize(gradeNum);
 
 			cout << endl << "Sugeneruoti studento pazymiai: ";
-			for(int i = 0; i < stud.getHomeworkNum(); i++){
-				nd[i] = rand() % 10 + 1;
-				cout << nd[i] << " ";
+			for(int i = 0; i < gradeNum; i++){
+				g = rand() % 10 + 1;
+				cout << g << " ";
+				nd.push_back(g);
 			}
 			stud.setGrades(nd);
-
 			stud.setExam(rand() % 10 + 1);
 			cout << endl << "Egzamino rezultatas: " << stud.getExam();
 		}
 
 		else {
 			cout << endl << "Iveskite atliktu namu darbu pazymius: " << endl;
-			// stud.grades.resize(stud.homeworkNum);
 			for(int i = 0; i < stud.getHomeworkNum(); i++){
-				nd[i] = numInput();
-				checkGrade(nd[i]);
+				g = numInput();
+				checkGrade(g);
+				nd.push_back(g);
 			}
 			stud.setGrades(nd);
 
@@ -162,6 +156,9 @@ void NewStud(vector <Studentai> &studentai){			// manual input - adding new stud
 			stud.setExam(gradeInput());
 		}
 	}
+	
+	f = calcFinal(stud.getGrades(), stud.getExam(), stud.getHomeworkNum(), rt);
+	stud.setFinal(f);
 	studentai.push_back(stud);
 	nd.clear();
 }
@@ -180,6 +177,7 @@ void fileInput(T &studentai, string fileName, char rt, bool timeOut){			// input
 		getline(file, line);
 		while (getline(file, line)){
 			Studentai stud;
+			int f;
 			string vardas, pavarde;
 
 			istringstream iss(line);
@@ -197,7 +195,8 @@ void fileInput(T &studentai, string fileName, char rt, bool timeOut){			// input
 			stud.setExam(g);
 			stud.setGrades(nd);
 			stud.setHomeworkNum(stud.getGrades().size());
-			stud.setFinal(calcFinal(stud.getGrades(), stud.getExam(), stud.getHomeworkNum(), rt));
+			f = calcFinal(stud.getGrades(), stud.getExam(), stud.getHomeworkNum(), rt);
+			stud.setFinal(f);
 			studentai.push_back(stud);
 		}
 	}
@@ -219,92 +218,27 @@ void fileInput(T &studentai, string fileName, char rt, bool timeOut){			// input
 	// cout << "Duomenu nuskaitymas is failo uztruko: " << chrono:: duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - t1).count() / 1000. << "s." << endl;
 }
 
-void output(vector <Studentai> studentai, char rt){						// output to console			// WORKING
+void printCon(vector <Studentai> studentai, char rt){			// output to console
+	string galutinis;
 
-	cout << "\n\n\n\n\n";
-	cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(18);
-	if(rt == '2') cout << "Galutinis (vid.)" << endl;
-	else if (rt == '1') cout << "Galutinis (med.)" << endl;
-	else cout << "Galutinis (vid.)" << setw(18) << "Galutinis (med.)" << endl;
-	if (rt == '3') cout << "----------------------------------------------------------------" << endl;
-	else cout << "-----------------------------------------------" << endl;
+	if(rt == '1') galutinis = "Galutinis (med.)";
+	else if (rt == '2') galutinis = "Galutinis (vid.)";
 
-	for(int i = 0; i < studentai.size(); i++){
-		double galutinisVid = 0;
-		double galutinisMed = 0;
-		
-		double sum = 0;		//calc vid
-		int size = studentai[i].getGrades().size();
-		for(int j = 0; j < size; j++){
-			sum = sum + studentai[i].getGrades()[j];
-		}
-		double average = sum / size;
-		galutinisVid = studentai[i].getExam()*0.6 + average*0.4;
-		
-
-		int vidI = (size/2)-1;			//calc med
-		sort(studentai[i].getGrades().begin(), studentai[i].getGrades().end());
-		if(size != 0) galutinisMed = studentai[i].getGrades()[vidI]*0.4 + studentai[i].getExam()*0.6;
-		else galutinisMed = ((studentai[i].getGrades()[vidI] + studentai[i].getGrades()[vidI+1])/2)*0.4 + studentai[i].getExam()*0.6;
-		
-		//galutinis outputui \/
-
-		cout << left << setw(15) << studentai[i].getVardas() << setw(15) << studentai[i].getPavarde() << setw(18);
-
-		if(rt == '1')	cout << fixed << setprecision(2) << galutinisMed << endl;
-		else if (rt == '2')	cout << fixed << setprecision(2) << galutinisVid << endl;
-		else cout << fixed << setprecision(2) << galutinisVid << setw(18) << setprecision(2) << galutinisMed << endl;
+	cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(18) << galutinis << endl
+	<< "----------------------------------------------------------------------" << endl;
+	for(auto stud : studentai){
+		cout << left << setw(20) << stud.getVardas() << 
+		setw(20) << stud.getPavarde() << 
+		setw(18) << fixed << setprecision(2) << stud.getFinal() << endl;
 	}
-}
-
-template <class T>
-void fileOutput(T winner, T loser, char rt, string outFileName){								// WORKING
-	
-	// high_resolution_clock::time_point t1 = high_resolution_clock::now();
-	
-	string wfile = "Winner_" + outFileName;
-	string lfile = "Loser_" + outFileName;
-
-	ofstream wout(wfile);
-	ofstream lout(lfile);
-
-	wout << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(18);
-	if(rt == '2') wout << "Galutinis (vid.)" << endl;
-	else if (rt == '1') wout << "Galutinis (med.)" << endl;
-	else wout << "Galutinis (vid.)" << setw(18) << "Galutinis (med.)" << endl;
-	if (rt == '3') wout << "-----------------------------------------------------------------------------------------------------" << endl;
-	else wout << "-------------------------------------------------------------------" << endl;
-
-	lout << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(18);
-	if(rt == '2') lout << "Galutinis (vid.)" << endl;
-	else if (rt == '1') lout << "Galutinis (med.)" << endl;
-	else lout << "Galutinis (vid.)" << setw(18) << "Galutinis (med.)" << endl;
-	if (rt == '3') lout << "-----------------------------------------------------------------------------------------------------" << endl;
-	else lout << "-------------------------------------------------------------------" << endl;
-
-	while(loser.size() > 0){
-		lout << left << setw(20) << loser.front().getVardas() << setw(20) << loser.front().getPavarde() << setw(18);
-		lout << fixed << setprecision(2) << round(loser.front().getFinal()) << endl;
-		loser.erase(loser.begin());
-	}		
-	lout.close();
-
-	while(winner.size() > 0){			
-		wout << left << setw(20) << winner.front().getVardas() << setw(20) << winner.front().getPavarde() << setw(18);
-		wout << fixed << setprecision(2) << round(winner.front().getFinal()) << endl;
-		winner.erase(winner.begin());
-	}
-	wout.close();
-
-	// cout << "Surusiuotu studentu isvedimas i du naujus failus uztruko: " << chrono:: duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - t1).count() / 1000. << "s." << endl;
 }
 
 template <class T>
 void print(T studentai, char rt, string outFileName){
 	string galutinis;
 
-	if(rt == '1') string galutinis = "Galutinis (med.)";
-	else if (rt == '2') string galutinis = "Galutinis (vid.)";
+	if(rt == '1') galutinis = "Galutinis (med.)";
+	else if (rt == '2') galutinis = "Galutinis (vid.)";
 
 	ofstream out(outFileName);
 
