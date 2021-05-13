@@ -122,7 +122,7 @@ void NewStud(vector <Studentai> &studentai, char rt){			// manual input - adding
 	}
 
 	else{
-		stud.setHomeworkNum(rand() % 25 + 1);				// homework number range: 1-25
+		stud.setHomeworkNum(rand() % 25 + 2);				// homework number range: 2-25
 
 		cout << endl << "Sugeneruotas atliktu namu darbu kiekis: " << stud.getHomeworkNum() << endl;
 

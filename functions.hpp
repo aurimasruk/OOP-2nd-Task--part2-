@@ -12,6 +12,7 @@
 #include <cmath>
 #include <chrono>
 #include <numeric>
+#include <string>
 
 using namespace std;
 using namespace std::chrono;
@@ -25,10 +26,25 @@ using namespace std::chrono;
 // 	double final;
 // };
 
-class Studentai {
-private:
+class basePerson{		//base class
+protected:
 	string vardas;
 	string pavarde;
+public:
+	basePerson() { };
+	// -------------------
+	inline std::string getVardas() const { return vardas; }
+	inline std::string getPavarde() const { return pavarde; }
+	// -------------------
+	inline void setVardas(std::string _vardas) { vardas = _vardas; }
+	inline void setPavarde(std::string _pavarde) { pavarde = _pavarde; }
+
+	~basePerson() {};
+};
+
+
+class Studentai : public basePerson {		
+private:
 	int homeworkNum;
 	vector <int> grades;
 	int exam;
@@ -37,16 +53,12 @@ public:
 	Studentai() : final(0) { } // def konstruktorius
 	Studentai(std::string name, std::string surname);
 	// -------------------- Getteriai ----------------------
-	inline std::string getVardas() const { return vardas; }
-	inline std::string getPavarde() const { return pavarde; }
 	inline std::vector<int> getGrades() const { return grades; }
 	inline int getExam() const { return exam; }
 	inline int getHomeworkNum() const { return homeworkNum; }
 	inline int getFinal() const { return final; }
 
 	// -------------------- Setteriai -----------------------
-	inline void setVardas(std::string _vardas) { Studentai::vardas = _vardas; }
-	inline void setPavarde(std::string _pavarde) { Studentai::pavarde = _pavarde; }
 	// inline void set1grade(int g) { grades.push_back(g); }
 	inline void setGrades(std::vector<int> _nd) { Studentai::grades = _nd; }
 	inline void setExam(int _exam) { Studentai::exam = _exam; }
@@ -56,9 +68,13 @@ public:
 
 
 	Studentai(const Studentai& other) :			// copy constructor
-		vardas(other.vardas), pavarde(other.pavarde),
+		// vardas(other.vardas), pavarde(other.pavarde),
 		grades(other.grades), exam(other.exam),
-		homeworkNum(other.homeworkNum), final(other.final) {}
+		homeworkNum(other.homeworkNum), final(other.final) 
+		{
+			vardas = other.getVardas();
+			pavarde = other.getPavarde();
+		}
 
 
 	Studentai& operator = (const Studentai& other){			// copy assignment operator
@@ -97,6 +113,7 @@ void generateStud(int, string);
 
 double calcFinal(vector <int>, int, int, char);			// update this in normal function of program
 
+//---- strats -----
 template <class T>
 void group_strat1(T, T&, T&, int);
 
@@ -105,6 +122,8 @@ void group_strat2(T&, T&, int);
 
 template <class T>
 void group_optimised_vector(T&, T&, int);
+
+//------ benchmarking --------
 
 template <class T>
 void mainFunc(T, T, T, bool, char, char);
@@ -117,5 +136,6 @@ void benchmarkingDeque(bool, char, char);
 void benchmarkingList(bool, char, char);
 
 void benchmark();
+
 
 #endif
