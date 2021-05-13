@@ -120,3 +120,7 @@ class -O3 | 0.013s. | 0.117s. | 1.275s. | 17.482s.  |
 
 * [v1.2](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v1.2) :
   * Realizuota `Rule of Three`.
+
+* [v1.5](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v1.5) :
+  * Pridėta abstrakti bazinė klasė `basePerson`.
+  * `Studentai` klasė pertvarkyta į išvestinę (derived) `basePerson` klasę.
