@@ -1,6 +1,15 @@
 # Pažymių skaičiuoklė #
 
-Programa yra skirta apskaičiuoti pažymių vidurkį arba medianą.
+Programa yra skirta apskaičiuoti vieno ar kelių studentų pažymių galutinį balą.
+
+# Turinys #
+
+* Programos veikimas
+  * [Veikimo principas](#veikimo-principas)
+  * [Spartos analizė](#spartos-analizė)
+* Programos versijos ir programų paleidimas
+  * [Programos įdiegimas ir naudojimasis](#programos-įdiegimas-ir-naudojimasis)
+  * [Programos versijos ir jų pakitimai](#releases)
 
 # Veikimo principas #
 
@@ -81,8 +90,14 @@ class -O3 | 0.013s. | 0.117s. | 1.275s. | 17.482s.  |
 # Programos įdiegimas ir naudojimasis #
 
 * Atsisiųskite vieną programos versijų iš [Releases](https://github.com/aurimasruk/OOP-2nd-Task/releases) aplanko ir ją išarchyvuokite.
-* Komandinėje eilutėje įveskite `g++ -o main main.cpp functions.cpp` ir `./main`.
+* Komandinėje eilutėje įveskite `g++ -o main -O2 main.cpp functions.cpp` ir `./main`.
 * Pradėjus veikti programai, įveskite reikalaujamus duomenis.
+
+### V2.0 automatinis programos įdiegimas ###
+
+* Atsisiųskite [v2.0](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v2.0) programos versiją.
+* Atsidarius install aplanką, paleiskite Setup.exe arba ProgramInstallSetup.msi ir sekite nurodymus.
+* Įdiegtą programą galėsite matyti darbalaukyje.
  
 # Releases #
 
@@ -124,3 +139,8 @@ class -O3 | 0.013s. | 0.117s. | 1.275s. | 17.482s.  |
 * [v1.5](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v1.5) :
   * Pridėta abstrakti bazinė klasė `basePerson`.
   * `Studentai` klasė pertvarkyta į išvestinę (derived) `basePerson` klasę.
+
+* [v2.0](https://github.com/aurimasruk/OOP-2nd-Task--part2-/releases/tag/v2.0) :
+  * Sukurta dokumentacija pasinaudojant [Doxygen](https://www.doxygen.nl/manual/index.html).
+  * Sukurti ir atlikti Unit Testai, pasinaudojant [Catch2](https://github.com/catchorg/Catch2) framework'u.
+  * Sukurti automatiniai įdiegimo failai.
